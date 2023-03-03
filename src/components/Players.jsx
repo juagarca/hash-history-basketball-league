@@ -1,3 +1,10 @@
+import { useLocation, useSearchParams } from "react-router-dom";
+
 export default function Players() {
-  return <div className="container">Players</div>;
+  const location = useLocation();
+  const [searchParams] = useSearchParams(location.search);
+
+  const team = searchParams.get("teamId");
+
+  return <div className="container">Players for {team}</div>;
 }
