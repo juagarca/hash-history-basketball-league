@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useLocation, useSearchParams, Link } from "react-router-dom";
+import { useLocation, useSearchParams, Link, Outlet } from "react-router-dom";
 import usePlayerNames from "../hooks/usePlayerNames";
 import slugify from "../utils/slugify";
 
@@ -60,8 +60,10 @@ export default function Players() {
   return loading ? (
     <p>Loading</p>
   ) : (
-    <div className="container">
+    <div className="container two-column">
       <Sidebar title="Players" list={playerNames} />
+
+      <Outlet />
     </div>
   );
 }
