@@ -1,8 +1,11 @@
 import { useParams, Link } from "react-router-dom";
+
+import TeamLogo from "./TeamLogo";
+
 import useTeamNames from "../hooks/useTeamNames";
 import useTeamsArticles from "../hooks/useTeamsArticles";
 import useTeam from "../hooks/useTeam";
-import TeamLogo from "./TeamLogo";
+
 import slugify from "../utils/slugify";
 
 function useTeamPageData(teamId) {

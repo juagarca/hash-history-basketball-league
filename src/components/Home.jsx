@@ -1,6 +1,8 @@
-import TeamLogo from "./TeamLogo";
-import useTeamNames from "../hooks/useTeamNames";
 import { Link } from "react-router-dom";
+
+import TeamLogo from "./TeamLogo";
+
+import useTeamNames from "../hooks/useTeamNames";
 
 export default function Home() {
   const { response: teamNames, loading } = useTeamNames();

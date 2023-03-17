@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+
 import usePlayer from "../hooks/usePlayer";
 
 export default function Player() {
