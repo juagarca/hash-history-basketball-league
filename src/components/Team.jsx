@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 
 import useTeam from "../hooks/useTeam";
 
@@ -9,9 +9,15 @@ export default function Team() {
 
   const { response: team, loading } = useTeam(teamId);
 
-  return loading ? (
-    <p>Loading</p>
-  ) : (
+  if (loading) {
+    return <p>Loading</p>;
+  }
+
+  if (!team) {
+    return <Navigate to="/teams" />;
+  }
+
+  return (
     <div className="panel">
       <div style={{ width: "100%" }}>
         <TeamLogo id={team.id} className="center" />

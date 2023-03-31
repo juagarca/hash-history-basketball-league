@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 
 import usePlayer from "../hooks/usePlayer";
 
@@ -11,9 +11,11 @@ export default function Player() {
     return <p>Loading</p>;
   }
 
-  return !player ? (
-    <p>Error</p>
-  ) : (
+  if (!player) {
+    return <Navigate to="/players" />;
+  }
+
+  return (
     <div className="panel">
       <img
         className="avatar"
