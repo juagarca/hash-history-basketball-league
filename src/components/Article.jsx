@@ -1,5 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
 
+import Loading from "./Loading";
+
 import useArticle from "../hooks/useArticle";
 
 export default function Article() {
@@ -7,7 +9,7 @@ export default function Article() {
   const { response: article, loading } = useArticle({ teamId, articleId });
 
   if (loading) {
-    return <p>Loading</p>;
+    return <Loading />;
   }
 
   if (!article) {

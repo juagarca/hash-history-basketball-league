@@ -1,5 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 
+import Loading from "./Loading";
+
 import usePlayer from "../hooks/usePlayer";
 
 export default function Player() {
@@ -8,7 +10,7 @@ export default function Player() {
   const { response: player, loading } = usePlayer(playerId);
 
   if (loading) {
-    return <p>Loading</p>;
+    return <Loading />;
   }
 
   if (!player) {

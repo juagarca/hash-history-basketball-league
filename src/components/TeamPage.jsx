@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 
+import Loading from "./Loading";
 import TeamLogo from "./TeamLogo";
 
 import useTeamNames from "../hooks/useTeamNames";
@@ -27,7 +28,7 @@ export default function TeamPage() {
   const { teamNames, teamsArticles, team, loading } = useTeamPageData(teamId);
 
   if (loading) {
-    return <p>Loading</p>;
+    return <Loading />;
   }
 
   if (!teamNames.includes(teamId)) {

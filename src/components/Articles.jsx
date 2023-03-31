@@ -1,5 +1,6 @@
 import { useParams, Outlet } from "react-router-dom";
 
+import Loading from "./Loading";
 import { Sidebar } from "./Sidebar";
 
 import useTeamsArticles from "../hooks/useTeamsArticles";
@@ -9,7 +10,7 @@ export default function Articles() {
   const { response: teamsArticles, loading } = useTeamsArticles(teamId);
 
   return loading ? (
-    <p>Loading</p>
+    <Loading />
   ) : (
     <div className="container two-column">
       <Sidebar

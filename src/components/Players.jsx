@@ -1,9 +1,10 @@
 import * as React from "react";
 import { useLocation, useSearchParams, Outlet } from "react-router-dom";
 
-import usePlayerNames from "../hooks/usePlayerNames";
-
+import Loading from "./Loading";
 import { Sidebar } from "./Sidebar";
+
+import usePlayerNames from "../hooks/usePlayerNames";
 
 export default function Players() {
   const location = useLocation();
@@ -23,7 +24,7 @@ export default function Players() {
   }, [location.search, searchParams]);
 
   return loading ? (
-    <p>Loading</p>
+    <Loading />
   ) : (
     <div className="container two-column">
       <Sidebar title="Players" list={playerNames} />
