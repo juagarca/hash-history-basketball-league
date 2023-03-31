@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import Loading from "./Loading";
 import TeamLogo from "./TeamLogo";
 
 import useTeamNames from "../hooks/useTeamNames";
@@ -8,7 +9,7 @@ export default function Home() {
   const { response: teamNames, loading } = useTeamNames();
 
   return loading ? (
-    <p>Loading</p>
+    <Loading />
   ) : (
     <div className="container">
       <h1 className="large-header">Hash History Basketball League</h1>
